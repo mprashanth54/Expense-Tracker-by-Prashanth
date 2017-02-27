@@ -1,0 +1,87 @@
+<div class="row">
+                        <div class="col-md-12">
+                            
+							
+                            <form class="form-horizontal" name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><strong>Add </strong>Expense</h3>
+
+                                </div>
+                                <div class="panel-body">
+									<div class="alert alert-success" role="alert" ng-show="success">
+										<button type="button" class="close" data-dismiss="alert" ng-click="success=false"><span aria-hidden="true">x</span><span class="sr-only">Close</span></button>
+										<strong>Well done!</strong> You successfully added an expense. Go on add another ....
+									</div>
+                                    <p>Expenses can be entered from Jan 2017 till today.</p>
+                                </div>
+                                <div class="panel-body">                                                                        
+                                   
+                                    <div class="form-group">
+                                        <label class="col-md-3 col-xs-12 control-label">Expense</label>
+                                        <div class="col-md-6 col-xs-12">                                            
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                                <input type="text" class="form-control"/ name="Expense" ng-model="user.expense" required>
+												
+                                            </div>    
+											<p ng-show="userForm.Expense.$invalid && !userForm.Expense.$pristine" class="help-block">This field is required.</p>
+                                            <span class="help-block">Name of the expense</span>
+                                        </div>
+                                    </div>
+									
+									<div class="form-group">
+                                        <label class="col-md-3 col-xs-12 control-label">Amount</label>
+                                        <div class="col-md-6 col-xs-12">                                            
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><span class="fa fa-rupee"></span></span>
+                                                <input type="number" class="form-control" ng-model="user.amount" name="Amount" required/>
+                                            </div> 
+											<p ng-show="userForm.Amount.$invalid && !userForm.Amount.$pristine" class="help-block">Amount is required.</p>
+                                            <span class="help-block">Please enter your amount here</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-md-3 col-xs-12 control-label">Notes</label>
+                                        <div class="col-md-6 col-xs-12">                                            
+                                            <textarea class="form-control" rows="5" ng-model="user.notes"></textarea>
+                                            <span class="help-block">Wanna elaborate about it...</span>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                    <div class="form-group">
+                                        <label class="col-md-3 col-xs-12 control-label">Category</label>
+                                        <div class="col-md-6 col-xs-12">                                                                                                                                        
+                                            <div ng-repeat="(key, val) in category">
+												<input type="checkbox" ng-model="formData.selectedCategory[val.name]" 
+												ng-required="!someSelected(formData.selectedCategory)">  {{val.name}}
+											</div>
+											<p class="error" ng-show="submitted && multipleCheckbox.$error.required">Select at least 1 category</p>
+                                        </div>
+                                    </div>
+									
+									 <div class="form-group">                                        
+                                        <label class="col-md-3 col-xs-12 control-label">Datepicker</label>
+                                        <div class="col-md-6 col-xs-12">
+											<div style="display:inline-block;">
+											<input type="date"  class="form-control" placeholder="Click on Calender" pattern="yyyy-MM-dd" name="DateEx" ng-model="user.date" required min="2017-01-01" max="{{today}}" />
+												<p ng-show="userForm.DateEx.$invalid && !userForm.DateEx.$pristine" class="help-block">Date is required.</p>
+												<p ng-show="userForm.DateEx.$error.min" class="help-block">Date to be entered above that range.</p>
+												<p ng-show="userForm.DateEx.$error.max && !userForm.DateEx.$pristine" class="help-block">Date to be entered below that range.</p>
+                                            <span class="help-block">Choose a date</span>
+											</div>
+										</div>
+									</div>
+								
+                                </div>
+                                <div class="panel-footer">
+                                    <button class="btn btn-default" ng-click="user={}">Clear Form</button>                                    
+                                    <input type="submit" class="btn btn-primary pull-right" value="Submit" ng-disabled="(userForm.$invalid)">
+                                </div>
+                            </div>
+                            </form>
+                            
+                        </div>
+                    </div>  

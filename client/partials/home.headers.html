@@ -1,0 +1,64 @@
+<div class="row">
+                        <div class="col-md-3">
+                            
+                            <!-- START WIDGET MESSAGES -->
+                            <div class="widget widget-default widget-item-icon">
+                                <div class="widget-item-left">
+                                    <span class="glyphicon glyphicon-time"></span>
+                                </div>                             
+                                <div class="widget-data">
+                                    <div class="widget-int num-count">₹{{dailyExpense}}</div>
+                                    <div class="widget-title">Today's</div>
+                                    <div class="widget-subtitle">Expense</div>
+                                </div>      
+                            </div>                            
+                            <!-- END WIDGET MESSAGES -->
+                            
+                        </div>
+						
+                        <div class="col-md-3">
+                            
+                            <!-- START WIDGET MESSAGES -->
+                            <div class="widget widget-default widget-item-icon" >
+                                <div class="widget-item-left">
+                                    <div class="numberCircle">7</div>
+                                </div>                             
+                                <div class="widget-data">
+                                    <div class="widget-int num-count">₹{{weeklyExpense}}</div>
+                                    <div class="widget-title">Week's</div>
+                                    <div class="widget-subtitle">Expense</div>
+                                </div>      
+                               
+                            </div>                            
+                            <!-- END WIDGET MESSAGES -->
+                            
+                        </div>
+                        <div class="col-md-3">
+                            
+                            <!-- START WIDGET REGISTRED -->
+                            <div class="widget widget-default widget-item-icon" >
+                                <div class="widget-item-left">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </div>
+                                <div class="widget-data">
+                                    <div class="widget-int num-count">₹{{monthlyExpense}}</div>
+                                    <div class="widget-title">{{time.month}}'s</div>
+                                    <div class="widget-subtitle">Expense</div>
+                                </div>
+                           
+                            </div>                            
+                            <!-- END WIDGET REGISTRED -->
+                            
+                        </div>
+                        <div class="col-md-3">
+                            
+                            <!-- START WIDGET CLOCK -->
+                            <div class="widget widget-info widget-padding-sm" >
+                                <div class="widget-big-int plugin-clock" style="padding-top:10px;" style="font-size:50px;">{{time.hour}}<span>:</span>{{time.min}}</div>                            
+                                <div class="widget-subtitle plugin-date" style="padding-top:5px;font-size:16px;">{{time.day}}, {{time.month}}&nbsp;{{time.today}}, &nbsp;{{time.year}}</div>
+                          
+                            </div>                        
+                            <!-- END WIDGET CLOCK -->
+                            
+                        </div>
+                    </div>

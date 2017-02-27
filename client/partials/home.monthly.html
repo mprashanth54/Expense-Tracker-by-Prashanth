@@ -1,0 +1,68 @@
+
+                        <div class="col-md-12">
+						<div class="col-md-6">
+                            <!-- START DEFAULT DATATABLE -->
+                            <div class="panel panel-default">
+                                <div class="panel-heading ui-draggable-handle">                                
+                                    <h3 class="panel-title">Month's Expenses</h3>
+
+                                </div>
+                                <div class="panel-body">
+								<div class="dataTables_length" id="DataTables_Table_0_length"><div class="col-md-2"><label>Date:</label></div><div class="col-md-8">
+								<input type="date" class="form-control" placeholder="Click on Calender" pattern="yyyy-MM-dd" name="DateEx" ng-model="DateEx" min="2017-01-01" max="{{today}}" /></div>
+								<div class="col-md-2" ><button class="btn btn-primary" ng-click="results()">Results</button></div>
+								</div>
+								<div id="DataTables_Table_0_filter" class="dataTables_filter"><label>Search:<input class="form-control " placeholder="" ng-model="searchDaily" type="search"></label></div>
+                                    <table class="table datatable dataTable no-footer" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
+                                        <thead>
+                                            <tr role="row"><th >Name</th><th>Amount</th><th>Category</th><th>Description</th><th>Action</th></tr>
+                                        </thead>
+                                        <tbody>
+										<tr ng-repeat="expense in data | filter: searchDaily" role="row" class="odd">
+                                                <td>{{expense.expense}}</td>
+                                                <td>₹{{expense.amount}}</td>
+                                                <td>{{expense.category}}</td>
+                                                <td>{{expense.notes}}</td>
+												<td>
+                                                    <button class="btn btn-danger btn-rounded btn-sm" ng-click="delete_row(expense);"><span class="fa fa-times"></span></button>
+                                                </td>
+                                        </tr>
+										</tbody>
+                                    </table></div>
+                                </div>
+                            </div>
+                            <!-- END DEFAULT DATATABLE -->
+			
+						
+						<div class="col-md-6">
+						
+						
+                            
+                            <!-- START VISITORS BLOCK -->
+                            <div class="panel panel-default">
+                                <div class="panel-heading ui-draggable-handle">
+                                    <div class="panel-title-box">
+                                        <h3>Spending's</h3>
+                                        <span>Category Wise</span>
+                                    </div>
+ 
+                                </div>
+                                <div class="panel-body padding-0">
+                                    <div style="padding-top:20px;padding-bottom:20px;">
+										<canvas id="pie" class="chart chart-pie" chart-data="data2" chart-labels="labels" chart-options="options"></canvas> 
+									</div>
+                                </div>
+                            </div>
+                            <!-- END VISITORS BLOCK -->
+                            
+                        
+						
+						
+						
+						
+						
+						
+						
+						</div>
+                        </div>
+                    
